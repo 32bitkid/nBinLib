@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nBinLib", "nBinLib.csproj", "{39DA2C4D-6E09-4707-8F6B-DC7C913C983C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nBinLib", "nBinLib\nBinLib.csproj", "{39DA2C4D-6E09-4707-8F6B-DC7C913C983C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nBinLib.Tests", "..\nBinLib.Tests\nBinLib.Tests.csproj", "{9CB0BAA9-7287-4761-AC6F-619A1697A46D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nBinLib.Tests", "nBinLib.Tests\nBinLib.Tests.csproj", "{9CB0BAA9-7287-4761-AC6F-619A1697A46D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
