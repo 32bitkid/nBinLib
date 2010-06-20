@@ -28,7 +28,7 @@ namespace nBinLib.BitReaders
 
             var prefix = value << bitsToFill;
 
-            for (var i = 0; i < 1 << bitsToFill; i++)
+            for (var i = 0u; i < 1 << bitsToFill; i++)
             {
                 if (_lengthTable[prefix | i] != -1)
                     throw new Exception();
