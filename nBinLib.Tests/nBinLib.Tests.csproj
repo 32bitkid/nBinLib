@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BitReaders\BitReader32Test.cs" />
     <Compile Include="BitReaders\BitReader64Test.cs" />
+    <Compile Include="CircularBuffers\ShortRingBufferedStreamTests.cs" />
     <Compile Include="CircularBuffers\RingBufferedStreamTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
