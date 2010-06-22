@@ -71,11 +71,11 @@ namespace nBinLib.CircularBuffers
 
         public int Peek(byte[] buffer, int offset, int count)
         {
-            if (count == 0)
-                return 0;
-
             if (Length - count < 0)
                 count = (int)Length;
+
+            if (count == 0)
+                return 0;
 
             if ((_read & _relativeMask) <= ((_read + count - 1) & _relativeMask))
             {
