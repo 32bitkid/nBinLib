@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using nBinLib.CircularBuffers;
 using NUnit.Framework;
 
@@ -10,7 +10,7 @@ namespace nBinLib.Tests.CircularBuffers
         [Test]
         public void ShouldPerformSimpleRead()
         {
-            var rb = new RingBufferedStream(3);
+            var rb = new CircularBufferedStream(3);
             rb.Write(new byte[] {1, 2, 3, 4, 5, 6, 7, 8}, 0, 8);
             var reader = new byte[8];
             rb.Read(reader, 0, 2);
@@ -25,7 +25,7 @@ namespace nBinLib.Tests.CircularBuffers
         public void ShouldWrapAround()
         {
             var reader = new byte[8];
-            var rb = new RingBufferedStream(3);
+            var rb = new CircularBufferedStream(3);
             
             rb.Write(new byte[] { 1, 2, 3, 4 }, 0, 4);
 
@@ -42,7 +42,7 @@ namespace nBinLib.Tests.CircularBuffers
         public void ShouldSeekForward()
         {
             var reader = new byte[8];
-            var rb = new RingBufferedStream(3);
+            var rb = new CircularBufferedStream(3);
 
             rb.Write(new byte[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 0, 8);
             rb.Seek(2, SeekOrigin.Current);
@@ -54,7 +54,7 @@ namespace nBinLib.Tests.CircularBuffers
         public void SeekShouldWrap()
         {
             var reader = new byte[8];
-            var rb = new RingBufferedStream(3);
+            var rb = new CircularBufferedStream(3);
 
             rb.Write(new byte[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 0, 8);
             rb.Seek(4, SeekOrigin.Current);

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace nBinLib.CircularBuffers
 {
-    public class RingBufferedStream : Stream
+    public class CircularBufferedStream : Stream
     {
         private readonly uint _capacity;
         private readonly uint _relativeMask;
@@ -14,12 +14,12 @@ namespace nBinLib.CircularBuffers
         private long _write;
         private long _read;
 
-        public RingBufferedStream()
+        public CircularBufferedStream()
             : this(20)
         {
         }
 
-        public RingBufferedStream(int sizeInBits)
+        public CircularBufferedStream(int sizeInBits)
         {
             _capacity = 1u << sizeInBits;
             _relativeMask = ~0u >> (32 - sizeInBits);
