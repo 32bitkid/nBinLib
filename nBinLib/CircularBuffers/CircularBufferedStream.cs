@@ -52,7 +52,7 @@ namespace nBinLib.CircularBuffers
         {
             get
             {
-                return (_write >= _read) ? _write - _read : long.MaxValue - _read + _write;
+                return (_write >= _read) ? _write - _read : long.MaxValue - _read + _write + 1;
             }
         }
 
