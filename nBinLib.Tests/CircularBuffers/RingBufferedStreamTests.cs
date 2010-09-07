@@ -63,5 +63,17 @@ namespace nBinLib.Tests.CircularBuffers
             rb.Read(reader, 0, 1);
             Assert.AreEqual(3, reader[0]);
         }
+
+        [Test]
+        public void ShouldRespondToIndexer() {
+            var rb = new CircularBufferedStream(3);
+
+            rb.Write(new byte[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 0, 4);
+            rb.Seek(4, SeekOrigin.Current);
+            rb.Write(new byte[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 0, 8);
+            Assert.AreEqual(1, rb[0]);
+            Assert.AreEqual(5, rb[4]);
+            Assert.AreEqual(7, rb[6]);
+        }
     }
 }

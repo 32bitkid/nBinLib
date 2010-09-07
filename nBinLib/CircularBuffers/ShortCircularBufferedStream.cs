@@ -5,8 +5,7 @@ using System.Text;
 
 namespace nBinLib.CircularBuffers
 {
-    public class ShortCircularBufferedStream : Stream
-    {
+    public class ShortCircularBufferedStream : Stream, ICircularBufferedStream {
         private readonly int _capacity;
         private readonly byte[] _buffer;
 
@@ -57,6 +56,11 @@ namespace nBinLib.CircularBuffers
             {
                 return (_write >= _read) ? _write - _read : ushort.MaxValue - _read + _write + 1;
             }
+        }
+
+        public byte this[int i]
+        {
+            get { return _buffer[(ushort)(_read + i)]; }
         }
 
         public override long Position

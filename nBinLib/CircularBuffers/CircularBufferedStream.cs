@@ -3,7 +3,7 @@ using System.IO;
 
 namespace nBinLib.CircularBuffers
 {
-    public class CircularBufferedStream : Stream
+    public class CircularBufferedStream : Stream, ICircularBufferedStream
     {
         private readonly uint _capacity;
         private readonly uint _relativeMask;
@@ -17,6 +17,10 @@ namespace nBinLib.CircularBuffers
         public CircularBufferedStream()
             : this(20)
         {
+        }
+
+        public byte this[int i] {
+            get { return _buffer[(_read + i) & _relativeMask]; }
         }
 
         public CircularBufferedStream(int sizeInBits)

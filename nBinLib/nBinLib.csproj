@@ -43,6 +43,7 @@
     <Compile Include="BitReaders\HuffmanReader.cs" />
     <Compile Include="BitReaders\IBitReader.cs" />
     <Compile Include="CircularBuffers\CircularBuffer.cs" />
+    <Compile Include="CircularBuffers\ICircularBufferedStream.cs" />
     <Compile Include="CircularBuffers\ShortCircularBufferedStream.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CircularBuffers\CircularBufferedStream.cs" />
